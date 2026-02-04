@@ -129,11 +129,7 @@ You must keep the license text and notices in derivative works.
 
 ***
 
-```
 <a name="ru" id="ru"></a>
-```
-
-
 ## РУССКИЙ
 
 ### Обзор
