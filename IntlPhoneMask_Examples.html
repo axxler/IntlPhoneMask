@@ -1,0 +1,94 @@
+<!--/**
+ * @file IntlPhoneMask.js
+ * @version 0.0.1
+ * @date 2026-02-04
+ * @link https://github.com/your-username/IntlPhoneMask
+ *
+ * Copyright (C) 2026 https://github.com/axxler
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */-->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntlPhoneMask - Examples</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+	<!-- use css file or import directly MIN version -->
+	<!-- <link media="all" rel="stylesheet" href="IntlPhoneMask.css"> -->
+	<!-- min css -->
+    <style>
+	.intl-wrapper{position:relative;display:flex;align-items:center;width:100%;box-sizing:border-box}.intl-select{position:absolute;left:12px;display:flex;align-items:center;cursor:pointer;z-index:20;height:100%;background:0 0;user-select:none}.intl-list{position:absolute;top:100%;left:0;width:100%;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 10px 25px -5px rgba(0,0,0,.1);display:none;flex-direction:column;z-index:9999;margin-top:8px;padding:8px}.intl-list.fixed-width{width:350px!important}.intl-list.active{display:flex;animation:intlPop .2s ease-out}@keyframes intlPop{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}.intl-search-box{padding:8px;margin-bottom:8px;border-bottom:1px solid #f1f5f9}.intl-search-input{width:100%;padding:8px 12px;border:1px solid #e2e8f0;border-radius:6px;font-size:14px;outline:0}.intl-items-container{overflow-y:auto;max-height:250px}.intl-item{padding:10px 14px;display:flex;align-items:center;gap:12px;cursor:pointer;border-radius:8px;transition:background .1s}.intl-item:hover{background:#f8fafc}.intl-item.hidden{display:none}.intl-flag-icon{width:22px;height:auto;flex-shrink:0}.intl-input-field{padding-left:65px!important;transition:all .3s ease}.state-invalid{border-color:#ef4444!important;box-shadow:0 0 0 3px rgba(239,68,68,.1)!important}.state-valid{border-color:#22c55e!important;box-shadow:0 0 0 3px rgba(34,197,94,.1)!important}.intl-items-container::-webkit-scrollbar{width:5px}.intl-items-container::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:10px}
+    </style>
+</head>
+<body class="bg-slate-50 p-8">
+
+    <div class="max-w-2xl mx-auto space-y-8">
+        <div class="text-center">
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">IntlPhoneMask.js - Examples</h1>
+            <p class="text-slate-500 mt-2">Full country list, multilingual & customizable</p>
+        </div>
+
+        <!-- 1. Русская версия -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+            <label class="block text-sm font-bold text-slate-700 mb-2">Стандартный (RU) - без сообщения, автоширина 100% (without validation messages)</label>
+            <input type="tel" class="phone-ru w-full border border-slate-300 rounded-xl p-4 outline-none text-lg" placeholder="Введите номер">
+        </div>
+
+        <!-- 2. English Version -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+            <label class="block text-sm font-bold text-slate-700 mb-2">English Interface (Validation Messages)</label>
+            <input type="tel" class="phone-en w-full border border-slate-300 rounded-xl p-4 outline-none text-lg" placeholder="Enter phone number">
+            <p class="val-msg-en text-xs mt-2 text-slate-400">Status: Waiting...</p>
+        </div>
+
+        <!-- 3. Fixed Width Version -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+            <label class="block text-sm font-bold text-slate-700 mb-2">Fixed Width List (350px)</label>
+            <div class="max-w-[300px]"> <!-- Контейнер узкий, но список будет 350px -->
+                <input type="tel" class="phone-fixed w-full border border-slate-300 rounded-xl p-4 outline-none text-lg" placeholder="Phone">
+            </div>
+            <p class="text-[10px] text-slate-400 mt-1 italic">Список шире, чем сам инпут.</p>
+        </div>
+    </div>
+	
+	<!-- min js to run IntlPhoneMask -->
+	<script src='IntlPhoneMask.min.js'></script>
+	
+	<!-- Init -->
+    <script>
+	document.addEventListener('DOMContentLoaded', () => {
+        // 3 types demo
+        window.onload = () => {
+            // 1. Russian / Русская (по умолчанию)
+            IntlPhoneMask.init('.phone-ru', { lang: 'ru' });
+
+            // 2. English with verification status / Английская версия с выводом статуса
+            IntlPhoneMask.init('.phone-en', { 
+                lang: 'en', 
+                statusSelector: '.val-msg-en' 
+            });
+
+            // 3. Fixed width / Фиксированная ширина списка (350px)
+            IntlPhoneMask.init('.phone-fixed', { 
+                lang: 'ru', 
+                fixedWidth: true 
+            });
+        };
+	});
+    </script>
+</body>
+</html>
