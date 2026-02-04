@@ -4,7 +4,9 @@
 
 Ultra-lightweight **Vanilla** JavaScript library for international phone inputs with automatic flag detection, masking, and validation.
 
-![IntlPhoneMask Demo](IntlPhoneMask_Examples.jpg)
+[**🚀 Open Live Demo**](https://axxler.github.io/IntlPhoneMask/IntlPhoneMask_Examples.html)
+
+[![IntlPhoneMask Preview](IntlPhoneMask_Examples.jpg)](https://axxler.github.io/IntlPhoneMask/IntlPhoneMask_Examples.html)
 
 ***
 
@@ -128,7 +130,7 @@ You must keep the license text and notices in derivative works.
 ***
 
 ```
-<a name="ru"></a>
+<a name="ru" id="ru"></a>
 ```
 
 
@@ -138,6 +140,8 @@ You must keep the license text and notices in derivative works.
 
 IntlPhoneMask — это высокопроизводительная библиотека на чистом JavaScript для ввода международных телефонов с автоматическим определением страны, маской и валидацией.
 Она создана как лёгкая альтернатива intl-tel-input с современным интерфейсом и минимальным размером бандла.
+
+[🚀 Открыть демонстрацию примеров](https://axxler.github.io/IntlPhoneMask/IntlPhoneMask_Examples.html)
 
 ### Возможности
 
